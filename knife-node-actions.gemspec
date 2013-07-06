@@ -4,8 +4,8 @@ require File.expand_path('../lib/knife-node-actions/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["David Ackerman"]
   gem.email         = ["david.s.ackerman@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{List and run actions available to a node}
+  gem.summary       = %q{List and run actions available to a node}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($\)
