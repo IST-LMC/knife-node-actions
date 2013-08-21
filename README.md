@@ -56,10 +56,12 @@ Chef makes it really easy to generate wrapper scripts to use more complicated to
 
 We've been using this template-wrapper script pattern for a while, and it has made tasks like these much easier for everyone to carry out (and anyone who needs to know what is actually happening under the hood can read the associated script). However, there have also been times like this:
 
-DevOps 1: Uggh! I just finished figuring out how to initialize this PostgreSQL standby server!
-DevOps 2: Really? Why didn't you just use the script I made for that on the server?
-DevOps 1: There was a script on the server already?
-DevOps 2: I mentioned that on IRC, but I guess I should have put it somewhere more permanent.
+```
+	DevOps 1: Uggh! I just finished figuring out how to initialize this PostgreSQL standby server!
+	DevOps 2: Really? Why didn't you just use the script I made for that on the server?
+	DevOps 1: There was a script on the server already?
+	DevOps 2: I mentioned that on IRC, but I guess I should have put it somewhere more permanent.
+```
 
 Basically, you build these wonderful tools to make your life easier, but people have to know about them. This follows the principle of getting this sort of documentation as close to the source as possible. If you adopt the convention of putting any "action" scripts in /usr/local/bin/node_actions and your team members know they can see what pre-baked actions are available on a node via: "knife node action list your-node-name", then hopefully it's a lot more difficult for the above situation to happen.
 
