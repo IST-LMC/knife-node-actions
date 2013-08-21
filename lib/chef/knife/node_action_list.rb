@@ -30,8 +30,6 @@ class Chef
 						for file in /usr/local/bin/node_actions/*; do
 					    if [ ! -h $file ]; then
 					      summary=$(sudo grep "^# Summary:" $file | cut -d ' ' -f3-)
-					      usage=$(sudo grep "^# Usage:" $file | cut -d ' ' -f2-)
-								help="$(sudo awk '/^# Help:/,/^[^#]/' $file | grep "^#" | sed "s/^# Help: /\t/" | sed "s/^# /\t/" | sed "s/^#/\t/")"
 								echo "$(basename $file): $summary"
 								#{config[:all] ? verbose_output : ""}
 					    fi
