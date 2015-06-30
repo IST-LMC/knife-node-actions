@@ -9,6 +9,7 @@ class Chef
 		        require 'net/ssh'
 		        require 'net/ssh/multi'
 		        require 'chef/knife/ssh'
+		        require 'chef/mixin/command'
 		      end
 		    end
 		  end
