@@ -8,9 +8,9 @@ class Chef
 
 			banner "knife node action list SERVER_NAME (options)"
 
-      option :all,
-      :short => "-a",
-      :long => "--all",
+      option :details,
+      :short => "-d",
+      :long => "--details",
       :description => "Display all information (not just summaries) about the node actions",
       :boolean => true,
       :default => false
@@ -21,7 +21,7 @@ class Chef
 				# the first place.
 				verbose_output = %Q{
 		      usage=$(sudo grep "^# Usage:" $file | cut -d ' ' -f2-)
-					help="$(sudo awk '/^# Help:/,/^[^#]/' $file | grep "^#" | sed "s/^# Help: /\t/" | sed "s/^# /\t/" | sed "s/^#/\t/")"					
+					help="$(sudo awk '/^# Help:/,/^[^#]/' $file | grep "^#" | sed "s/^# Help: /\t/" | sed "s/^# /\t/" | sed "s/^#/\t/")"
 					echo "\n\t$usage\n"
 					echo "$help\n"
 				}
@@ -31,7 +31,7 @@ class Chef
 					    if [ ! -h $file ]; then
 					      summary=$(sudo grep "^# Summary:" $file | cut -d ' ' -f3-)
 								echo "$(basename $file): $summary"
-								#{config[:all] ? verbose_output : ""}
+								#{config[:details] ? verbose_output : ""}
 					    fi
 					  done
 				}
