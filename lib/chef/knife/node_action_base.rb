@@ -23,7 +23,7 @@ class Chef
 				knife_ssh = Chef::Knife::Ssh.new
         knife_ssh.configure_attribute
 
-        if knife_ssh.config[:attribute] == "ipaddress"
+        if knife_ssh.config[:ssh_attribute] == "ipaddress"
           orig_server_name = server_name
           server_name = Chef::Node.load(server_name)[:ipaddress]
 
