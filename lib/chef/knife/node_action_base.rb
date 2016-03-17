@@ -7,8 +7,8 @@ class Chef
         if self.respond_to?(:get_ssh_attribute)
           return self.get_ssh_attribute(:ssh_attribute)
         else
-          knife_ssh.configure_attribute
-          return knife_ssh.config[:ssh_attribute]
+          self.configure_attribute
+          return self.config[:ssh_attribute]
         end
       end
     end
